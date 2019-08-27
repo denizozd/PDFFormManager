@@ -1,0 +1,119 @@
+{
+  "fileUrl": "https://www.pickupstix.com/assets/media/locations/pdf/empty.pdf",
+  "fileName": "outputt.pdf",
+
+  "inputs": [
+{
+  "pageIndex": 0,
+  "fieldType": "signatureField",
+  "fieldName": "Signature",
+  "isReadOnly": false,
+  "fieldRect": [
+    10,
+    10,
+    130,
+    230
+  ],
+  "rgbBorder" : [0,1,0],
+  "rgbBackGround" : [50,1,15]
+},
+    {
+      "pageIndex": 0,
+      "fieldType": "checkBox",
+      "fieldName": "MyCheckBox",
+      "style": "u",
+      "isReadOnly": false,
+      "coordinates": [
+        40,
+        160,
+        30,
+        30
+      ],
+      "rgbBorder" : [0,1,0],
+      "rgbBackGround" : [50,1,15]
+    },
+
+    {
+      "pageIndex": 0,
+      "fieldType": "textField",
+      "fieldName": "textField",
+      "isReadOnly": false,
+      "fieldRect": [
+        20,
+        250,
+        100,
+        100
+      ],
+      "rgbBorder" : [0,1,0],
+      "rgbBackGround" : [50,1,15]
+    },
+
+    {
+      "pageIndex": 0,
+      "fieldType": "radioButton",
+      "fieldName": "MyRadioButton",
+      "style" : "noCaption",
+      "isReadOnly": false,
+      "coordinates": [
+        140,
+        290,
+        30,
+        30
+      ],
+      "text": [
+        70,
+        280
+      ],
+      "options": [
+        "a",
+        "b",
+        "c"
+      ],
+      "rgbBorder" : [0,1,0],
+      "rgbBackGround" : [0,1,1]
+    },
+    {
+      "pageIndex": 0,
+      "fieldType": "dropdown",
+      "fieldName": "dropdown",
+      "isReadOnly" : false,
+      "isMultiSelect" : true,
+      "fieldRect": [
+        20,
+        150,
+        50,
+        20
+      ],
+      "options": [
+        "option1",
+        "option2"
+      ],
+      "rgbBorder" : [0,0,1],
+      "rgbBackGround" : [1,1,0]
+    },
+
+    {
+      "pageIndex" : 0,
+      "fieldType" : "listBox",
+      "fieldName" : "listBox",
+      "isReadOnly": false,
+      "isMultiSelect" : true,
+      "fieldRect" : [
+        300,
+        300,
+        70,
+        70
+      ],
+      "options": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "rgbBorder" : [1,0,0],
+      "rgbBackGround" : [0,1,0]
+    }
+
+  ]
+}

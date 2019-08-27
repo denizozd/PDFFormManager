@@ -1,0 +1,25 @@
+{
+  "fileUrl": "http://www.pdf995.com/samples/pdf.pdf",
+  "fileName": "newFile.pdf",
+  "inputs":
+
+[{"pageIndex":0,"fieldType":"textField","fieldRect":[100,150,100,100],"fieldName":"textfields"
+
+}
+{"pageIndex":0,"fieldType":"textField","fieldRect":[20,10,100,100],"fieldName":"inputttt"
+
+}
+{"pageIndex":0,"fieldType":"checkBox","coordinates":[100,150,30,30],"fieldName":"checkBox"
+
+}
+
+
+{"pageIndex":0,"fieldType":"radioButton","widget" : [50,40,30,30], "text":[100,30], "options":["a","b","c"]
+} 
+
+{"pageIndex":1,"fieldType":"dropdown","fieldRect":[330,100,350,130],"fieldName":"input2","options":["option1","option2"]
+
+}, ]
+
+
+}

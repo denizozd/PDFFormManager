@@ -1,0 +1,13 @@
+{
+fieldName : input1
+pageIndex : 1
+fieldRect : [100,100,200,130]
+fieldType : textField
+}
+{
+fieldName : input2
+pageIndex : 1
+fieldRect : [250,100,350,130]
+options : ["option1","option2"]
+fieldType : dropdown
+}

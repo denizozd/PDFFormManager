@@ -64,8 +64,8 @@ public class RadioButton
         // no caption => round
         Long x_widget = widgetCoordinates.get(0);
         Long y_widget = widgetCoordinates.get(1);
-        Long height_widget = widgetCoordinates.get(2);
-        Long width_widget = widgetCoordinates.get(3);
+        Long width_widget = widgetCoordinates.get(2);
+        Long height_widget = widgetCoordinates.get(3);
 
         Long tx = textCoordinates.get(0);
         Long ty = textCoordinates.get(1);
@@ -74,7 +74,9 @@ public class RadioButton
         for (int i = 0; i < options.size(); i++)
         {
             PDAnnotationWidget widget = new PDAnnotationWidget();
-            widget.setRectangle( new PDRectangle(x_widget, PDRectangle.A4.getHeight() - y_widget - i * 35, width_widget, height_widget));
+            //widget.setRectangle( new PDRectangle(x_widget, PDRectangle.A4.getHeight() - y_widget - i * 35, width_widget, height_widget));
+            widget.setRectangle( new PDRectangle(x_widget, y_widget +  i * 35, width_widget, height_widget));
+
             //widget.setRectangle( new PDRectangle(50, PDRectangle.A4.getHeight() - 40 - i * 35, 30, 30));
             widget.setAppearanceCharacteristics(appearanceCharacteristics);
             PDBorderStyleDictionary borderStyleDictionary = new PDBorderStyleDictionary();
@@ -84,8 +86,9 @@ public class RadioButton
             widget.setPage(page);
 
             COSDictionary apNDict = new COSDictionary();
-            apNDict.setItem(COSName.ON, createAppearanceStream(document, widget, true , page));
-            apNDict.setItem( options.get(i), createAppearanceStream(document, widget, true,page));
+            //below 2 lines
+            apNDict.setItem(COSName.ON, createAppearanceStream(document, widget, true ));
+            apNDict.setItem( options.get(i), createAppearanceStream(document, widget, true));
 
             PDAppearanceDictionary appearance = new PDAppearanceDictionary();
             PDAppearanceEntry appearanceNEntry = new PDAppearanceEntry(apNDict);
@@ -94,6 +97,7 @@ public class RadioButton
             widget.setAppearanceState("On"); // don't forget this, or button will be invisible
             widgets.add(widget);
             page.getAnnotations().add(widget);
+            widget.setAnnotationName(fieldName);
         }
         radioButton.setWidgets(widgets);
 
@@ -103,13 +107,13 @@ public class RadioButton
         //Coordinates for the text
         //PDPageContentStream contents = new PDPageContentStream(document, page);
         PDPageContentStream contents = new PDPageContentStream(document, page,  true, false);
-        for (int i = 0; i < options.size(); i++)
-        {
+        for (int i = 0; i < options.size(); i++) {
             contents.beginText();
             contents.setFont(PDType1Font.HELVETICA, 15);
-            contents.newLineAtOffset(tx, PDRectangle.A4.getHeight() - ty - i * 35);
+            //contents.newLineAtOffset(tx, PDRectangle.A4.getHeight() - ty - i * 35);
+            contents.newLineAtOffset(tx, ty - i * 35);
             //contents.newLineAtOffset(100, PDRectangle.A4.getHeight() - 30 - i * 35);
-            contents.showText((String) options.get(i));
+            contents.showText(options.get(i));
             contents.endText();
         }
         contents.close();
@@ -122,14 +126,12 @@ public class RadioButton
     }
 
     private static PDAppearanceStream createAppearanceStream(
-            final PDDocument document, PDAnnotationWidget widget, boolean on , PDPage page) throws IOException
+            final PDDocument document, PDAnnotationWidget widget, boolean on ) throws IOException
     {
         PDRectangle rect = widget.getRectangle();
         PDAppearanceStream onAP = new PDAppearanceStream(document);
-        //onAP.setBBox(new PDRectangle(rect.getWidth(), rect.getHeight()));
-       // PDPageContentStream onAPCS = new PDPageContentStream(document, onAP);
-
-        PDPageContentStream onAPCS = new PDPageContentStream(document, page, PDPageContentStream.AppendMode.APPEND, false);
+        onAP.setBBox(new PDRectangle(rect.getWidth(), rect.getHeight()));
+        PDPageContentStream onAPCS = new PDPageContentStream(document, onAP);
 
         PDAppearanceCharacteristicsDictionary appearanceCharacteristics = widget.getAppearanceCharacteristics();
         PDColor backgroundColor = appearanceCharacteristics.getBackground();

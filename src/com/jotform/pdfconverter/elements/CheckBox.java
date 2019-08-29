@@ -45,7 +45,7 @@ import java.util.List;
 public class CheckBox
 {
     public static void CreateCheckBox(PDAcroForm acroForm ,PDDocument document,PDPage page
-            ,List<Long> coordinates, String fieldName,String style, float[] rgbBackGround, float [] rgbBorder,boolean isReadOnly) throws IOException {
+            ,List<Long> coordinates, String fieldName,String style, float[] rgbBackGround, float [] rgbBorder,boolean isReadOnly, boolean check) throws IOException {
 
 
        // new PDDocument();
@@ -63,7 +63,8 @@ public class CheckBox
         //acroForm.setNeedAppearances(true);
 
         float x = coordinates.get(0);
-        float y = page.getMediaBox().getHeight() - coordinates.get(1);
+        //float y = page.getMediaBox().getHeight() - coordinates.get(1);
+        float y = coordinates.get(1);
         float width = coordinates.get(2);
         float heigth = coordinates.get(3);
         //float x = 50;
@@ -105,9 +106,9 @@ public class CheckBox
         // replace the background colors c with c * 0.75
         page.getAnnotations().add(checkbox.getWidgets().get(0));
         acroForm.getFields().add(checkbox);
-
-        //checkbox.check();
-
+        if( check ){
+            checkbox.check();
+        }
         //document.save(file);
         //document.close();
     }

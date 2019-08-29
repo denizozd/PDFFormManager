@@ -171,6 +171,8 @@ public class PDFFormManager {
 
                 boolean isReadOnly = (boolean) inp.get("isReadOnly");
 
+                boolean check = (boolean)inp.get("check");
+
                 Long index = (Long) inp.get("pageIndex");
 
                 PDPage page = PDFDocument.getPage(Math.toIntExact(index));
@@ -180,7 +182,7 @@ public class PDFFormManager {
                 String fieldName = (String) inp.get("fieldName");
 
                 CheckBox.CreateCheckBox(acroForm, PDFDocument, page, coordinates, fieldName, style, rgbBackGround,
-                        rgbBorder,isReadOnly);
+                        rgbBorder,isReadOnly,check);
             } else if (inp.get("fieldType").equals("signatureField")) {
 
                 PDRectangle rectangle = Rectangle((JSONArray) inp.get("fieldRect"));

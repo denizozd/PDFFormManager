@@ -88,7 +88,7 @@ public class TextField {
         page.getAnnotations().add(widget);
 
         // set the field value
-        //textBox.setValue(fieldName);
+        textBox.setValue(fieldName);
 
         textBox.setDefaultValue(fieldName);
         textBox.setAlternateFieldName(fieldName);

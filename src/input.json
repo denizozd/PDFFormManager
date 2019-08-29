@@ -1,6 +1,6 @@
 {
   "fileUrl": "https://www.pickupstix.com/assets/media/locations/pdf/empty.pdf",
-  "fileName": "outputt.pdf",
+  "fileName": "leftbottom.pdf",
 
   "inputs": [
 {
@@ -8,11 +8,12 @@
   "fieldType": "signatureField",
   "fieldName": "Signature",
   "isReadOnly": false,
+  "check": false,
   "fieldRect": [
-    10,
-    10,
+    20,
+    20,
     130,
-    230
+    100
   ],
   "rgbBorder" : [0,1,0],
   "rgbBackGround" : [50,1,15]
@@ -22,10 +23,27 @@
       "fieldType": "checkBox",
       "fieldName": "MyCheckBox",
       "style": "u",
-      "isReadOnly": false,
+      "isReadOnly": true,
+      "check" : true,
       "coordinates": [
-        40,
-        160,
+        70,
+        660,
+        30,
+        30
+      ],
+      "rgbBorder" : [0,1,0],
+      "rgbBackGround" : [50,1,15]
+    },
+    {
+      "pageIndex": 0,
+      "fieldType": "checkBox",
+      "fieldName": "CheckBox",
+      "style": "H",
+      "isReadOnly": false,
+      "check" : false,
+      "coordinates": [
+        130,
+        660,
         30,
         30
       ],
@@ -50,19 +68,33 @@
 
     {
       "pageIndex": 0,
+      "fieldType": "textField",
+      "fieldName": "readOnly",
+      "isReadOnly": true,
+      "fieldRect": [
+        200,
+        250,
+        100,
+        100
+      ],
+      "rgbBorder" : [0,1,0],
+      "rgbBackGround" : [50,1,15]
+    },
+    {
+      "pageIndex": 0,
       "fieldType": "radioButton",
       "fieldName": "MyRadioButton",
-      "style" : "noCaption",
+      "style" : "4",
       "isReadOnly": false,
       "coordinates": [
-        140,
-        290,
+        190,
+        390,
         30,
         30
       ],
       "text": [
-        70,
-        280
+        150,
+        380
       ],
       "options": [
         "a",
@@ -74,10 +106,35 @@
     },
     {
       "pageIndex": 0,
+      "fieldType": "radioButton",
+      "fieldName": "ReadOnly",
+      "style" : "noCaption",
+      "isReadOnly": true,
+      "coordinates": [
+        90,
+        390,
+        30,
+        30
+      ],
+      "text": [
+        50,
+        470
+      ],
+      "options": [
+        "a",
+        "b",
+        "c"
+      ],
+      "rgbBorder" : [0,1,0],
+      "rgbBackGround" : [0,1,1]
+    },
+
+    {
+      "pageIndex": 0,
       "fieldType": "dropdown",
       "fieldName": "dropdown",
       "isReadOnly" : false,
-      "isMultiSelect" : true,
+      "isMultiSelect" : false,
       "fieldRect": [
         20,
         150,
@@ -88,7 +145,7 @@
         "option1",
         "option2"
       ],
-      "rgbBorder" : [0,0,1],
+      "rgbBorder" : [0,10,1],
       "rgbBackGround" : [1,1,0]
     },
 
@@ -97,9 +154,9 @@
       "fieldType" : "listBox",
       "fieldName" : "listBox",
       "isReadOnly": false,
-      "isMultiSelect" : true,
+      "isMultiSelect" : false,
       "fieldRect" : [
-        300,
+        400,
         300,
         70,
         70
@@ -111,7 +168,29 @@
         "d",
         "e"
       ],
-      "rgbBorder" : [1,0,0],
+      "rgbBorder" : [1,10,0],
+      "rgbBackGround" : [0,1,0]
+    },
+    {
+      "pageIndex" : 0,
+      "fieldType" : "listBox",
+      "fieldName" : "multiSelect",
+      "isReadOnly": false,
+      "isMultiSelect" : true,
+      "fieldRect" : [
+        400,
+        400,
+        70,
+        70
+      ],
+      "options": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "rgbBorder" : [1,10,0],
       "rgbBackGround" : [0,1,0]
     }
 

@@ -31,7 +31,8 @@ public class ListBox{
         //PDPage page = document.getPage((int) pageIndex);
 
         float x = coordinates.get(0);
-        float y = page.getMediaBox().getHeight() - coordinates.get(1);
+        //float y = page.getMediaBox().getHeight() - coordinates.get(1);
+        float y = coordinates.get(1);
         float width = coordinates.get(2);
         float height = coordinates.get(3);
 

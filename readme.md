@@ -12,24 +12,16 @@
 
 ## Technologies
 * Java 11.0.3
-* Maven ?
-* Apache PDFBox 2.0.14
+* Maven 4.0.0
+* Apache PDFBox 2.0.16
 
 ## Setup
+
+Extract setup.zip and follow the instructions.
 
 Input data is provided as a JSON File which is given as the first argument of main function.
 
 Input JSON File contains URL of the pdf document to be modified, file name that we want to save the document to our local environment and inputs that describe form fields.
-
-Input example:---
-
-//add screenshots here
-
-Output example:---
-
-## Code Examples
-Show examples of usage:
-`put-your-code-here`
 
 ## Features
 
@@ -57,9 +49,6 @@ Show examples of usage:
 ## Status
 Project is: _in progress_
 
-## Inspiration
-Add here credits. Project inspired by..., based on...
-
 ## Contact
-Created by [@flynerdpl](https://www.flynerd.pl/) - feel free to contact me!
+Created by [@flynerdpl](https://github.com/denizozd/) - feel free to contact me!
 -

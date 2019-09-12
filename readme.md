@@ -50,5 +50,5 @@ Input JSON File contains URL of the pdf document to be modified, file name that 
 Project is: _in progress_
 
 ## Contact
-Created by [@flynerdpl](https://github.com/denizozd/) - feel free to contact me!
+Created by [@denizozd](https://github.com/denizozd/) - feel free to contact me!
 -
